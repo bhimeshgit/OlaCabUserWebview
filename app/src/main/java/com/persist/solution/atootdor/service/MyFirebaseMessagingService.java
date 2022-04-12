@@ -69,7 +69,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)  //dismisses the notification on click
                     .setSound(defaultSoundUri);
-            if (remoteMessage.getNotification().getImageUrl() != null) {
+            if (remoteMessage.getData().get("image-url") != null) {
                 Bitmap bitmap = getBitmapfromUrl(remoteMessage.getData().get("image-url"));
                 notificationBuilder.setStyle(
                         new NotificationCompat.BigPictureStyle()
